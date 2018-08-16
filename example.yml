@@ -1,0 +1,60 @@
+# Example Configuration File for behaviorCodeAuto.R
+
+##########################################################
+# WARNING: THESE VALUES ARE LIKELY INVALID. ADJUST THEM. #
+##########################################################
+
+# Path to the root of the behaviorcode repository
+behaviorcode_path : "behaviorcode/"
+# Path to the root of the data folder, structured for behaviorcode
+data_path : "Data/"
+# Whether or not you need to stitch logs together
+stitch_logs : False
+# Example Match: 050318_OD1030618_TA25_Dyad_Afternoon
+fileRegex : "[0-9]{6}_[0-9A-Z]+[0-9]{6}_[0-9A-Za-z]+_Dyad_[A-Za-z]+"
+# Example Match: _OD1030618_TA25_Dyad_
+subjRegex : "_[0-9A-Z]+[0-9]{6}_[0-9A-Za-z]+_Dyad_"
+# Verbosity Levels: silence, error, warning, info, debug, verbose
+verbosity : "info"
+# Configurations used by behavior.R
+behavior:
+  # Prompt: "Did you mark assay starts in your score logs? "
+  markAssayStarts: False
+  # Prompt: "Are there any behaviors in the list that should be combined? "
+  combineBehaviors: False
+  # Prompt: "Were all of your assays the same length of time? "
+  assaysSameLength: True
+  # Prompt: "Please enter the length of your assay in seconds: "
+  assayDuration: 1800
+  # Prompt: "How many experimental groups were there? "
+  expGroups: 3
+  # Prompt(s): "Please enter the name of a group (ie 'Control', 'Injected', etc.)."
+  groups:
+   - "Null"
+   - "Het"
+   - "WT"
+   # Prompt(s): "Please enter the name of a timepoint (ie 'Baseline', 'Day 4', etc.)."
+  timepoints:
+   - "D1_Aft"
+   - "D1_Morn"
+   - "D2_Aft"
+   - "D2_Morn"
+# Whether or not to combine all behaviors and treat them as one group
+combine_all_behaviors: False
+# Combines "toCombine1" and "toCombine2" as "combination1"
+# Combines "toCombine3" and "toCombine4" as "combination2"
+combine_behaviors:
+ -
+  combined: "combination1"
+  toCombine:
+   - "toCombine1"
+   - "toCombine2"
+ -
+  combined: "combination2"
+  toCombine:
+   - "toCombine3"
+   - "toCombine4"
+# Excludes behaviors "toIgnore1" and "toIgnore2" from analysis
+ignore_behaviors:
+ - "toIgnore1"
+ - "toIgnore2"
