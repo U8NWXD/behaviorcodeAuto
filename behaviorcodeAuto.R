@@ -161,7 +161,6 @@ notify = function(level, message, details = NULL) {
   }
 }
 
-
 find_match = function(targets, list, level, autoPick = TRUE) {
   matches = character()
   for (target in targets) {
@@ -237,10 +236,10 @@ other_day = function(logName) {
   date = as.Date(date, format = form)
   if (grepl("D2", prefix)) {
     adj = date - 1
-    adjPrefix = str_replace(prefix, "D2/D2_", "D1/D1_")
+    adjPrefix = str_replace_all(prefix, "D2", "D1")
   } else {
     adj = date + 1
-    adjPrefix = str_replace(prefix, "D1/D1_", "D2/D2_")
+    adjPrefix = str_replace_all(prefix, "D1", "D2")
   }
   adj = format(adj, form)
   adjCore = paste(adj, substr(core, 7, nchar(core)), sep = "")
