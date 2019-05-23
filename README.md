@@ -34,3 +34,6 @@ and that
 > for now we offer no guarantees that it will work as expected for
 > other users and assume no responsibility for any unforeseen
 > consequences of its use.
+
+All changes made between April 4, 2019 and June 12, 2019 are dedicated
+to the public domain.
