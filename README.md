@@ -5,6 +5,11 @@ In order to work, modifications to `behaviorcode` are required. The
 compatible form can be found in the
 [fork](https://github.com/U8NWXD/behaviorcode) of `behaviorcode`.
 
+## Dependencies
+Besides the standard `R` dependencies which will be loaded by the code,
+you must have my [fork](https://github.com/U8NWXD/behaviorcode) of
+`behaviorcode`, version at least 0.1.0 and less than 1.0.0.
+
 ## Configuration
 `behaviorcodeAuto` can be configured through a command-line
 interface. When prompted, you can choose to use a configuration file
