@@ -10,8 +10,8 @@ behaviorcode_path : "behaviorcode/"
 data_path : "Data/"
 # Whether or not you need to stitch logs together
 stitch_logs : False
-# Example Match: 050318_OD1030618_TA25_Dyad_Afternoon
-fileRegex : "[0-9]{6}_[0-9A-Z]+[0-9]{6}_[0-9A-Za-z]+_Dyad_[A-Za-z]+"
+# Example Match: 050318_OD1030618_TA25_Dyad_Afternoon.xyz
+fileRegex : "[0-9]{6}_[0-9A-Z]+[0-9]{6}_[0-9A-Za-z]+_Dyad_[A-Za-z]+.*"
 # Example Match: _OD1030618_TA25_Dyad_
 subjRegex : "_[0-9A-Z]+[0-9]{6}_[0-9A-Za-z]+_Dyad_"
 # Verbosity Levels: silence, error, warning, info, debug, verbose
