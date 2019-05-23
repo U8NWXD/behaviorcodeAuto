@@ -5,9 +5,9 @@
 ##########################################################
 
 # Path to the root of the behaviorcode repository
-behaviorcode_path : "behaviorcode/"
+behaviorcode_path : "../behaviorcode/"
 # Path to the root of the data folder, structured for behaviorcode
-data_path : "Data/"
+data_path : "../data_split/"
 # Whether or not you need to stitch logs together
 stitch_logs : False
 # Example Match: 050318_OD1030618_TA25_Dyad_Afternoon.xyz
@@ -19,7 +19,13 @@ verbosity : "info"
 # Configurations used by behavior.R
 behavior:
   # Prompt: "Did you mark assay starts in your score logs? "
-  markAssayStarts: False
+  markAssayStarts: True
+  # Marks that are used, in decreasing order of preference, as start
+  # mark in logs. For example, a log file with `LIGHTS ON` and
+  # `video start` would have `LIGHTS ON` used as the mark.
+  startMarks:
+   - "LIGHTS ON"
+   - "video start"
   # Prompt: "Are there any behaviors in the list that should be combined? "
   combineBehaviors: False
   # Prompt: "Were all of your assays the same length of time? "
@@ -27,12 +33,12 @@ behavior:
   # Prompt: "Please enter the length of your assay in seconds: "
   assayDuration: 1800
   # Prompt: "How many experimental groups were there? "
-  expGroups: 3
+  expGroups: 1
   # Prompt(s): "Please enter the name of a group (ie 'Control', 'Injected', etc.)."
   groups:
-   - "Null"
-   - "Het"
    - "WT"
+   - "Het"
+   - "Null"
    # Prompt(s): "Please enter the name of a timepoint (ie 'Baseline', 'Day 4', etc.)."
   timepoints:
    - "D1_Aft"
@@ -44,17 +50,7 @@ combine_all_behaviors: False
 # Combines "toCombine1" and "toCombine2" as "combination1"
 # Combines "toCombine3" and "toCombine4" as "combination2"
 combine_behaviors:
- -
-  combined: "combination1"
-  toCombine:
-   - "toCombine1"
-   - "toCombine2"
- -
-  combined: "combination2"
-  toCombine:
-   - "toCombine3"
-   - "toCombine4"
+
 # Excludes behaviors "toIgnore1" and "toIgnore2" from analysis
 ignore_behaviors:
- - "toIgnore1"
- - "toIgnore2"
+
